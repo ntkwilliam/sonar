@@ -13,7 +13,6 @@ pipeline {
         }
         stage('Code checkout and build') {
             steps {
-                ant -version
                 ant -f build.xml
             }
         }
