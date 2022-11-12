@@ -6,12 +6,15 @@ pipeline {
                 sh 'ant -version'
             }
         }
+        stage('Echo random message') {
+            steps {
+                echo 'In the second stage'
+            }
+        }
         stage('Code checkout and build') {
             steps {
-                sh """
-                    ant -version
-                    ant -f build.xml
-                """
+                ant -version
+                ant -f build.xml
             }
         }
     }
